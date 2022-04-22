@@ -23,7 +23,14 @@ main{
 
 .game-container{
   display: grid;
-  grid-template-columns: 60px 60px 60px;
+  grid-template-columns: 80px 80px 80px;
+}
+
+.click{
+  border: 1px solid black;
+  height: 80px
+  /* we don t need width due to grid and height connection */
+
 }
 
 
