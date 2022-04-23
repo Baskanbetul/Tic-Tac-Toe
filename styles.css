@@ -28,9 +28,10 @@ main{
 
 .click{
   border: 1px solid black;
-  height: 80px
-  /* we don t need width due to grid and height connection */
+  height: 80px;
+  background-color: #b59edd;
 
+/* we don t need width due to grid and height connection */
 }
 
 
