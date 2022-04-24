@@ -1,6 +1,14 @@
 
 * {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Asset', cursive;
+}
+
+h1{
+  font-family: 'Creepster', cursive;
+}
+
+h2{
+  font-family: 'Eater', cursive;
 }
 
 .player-one {
@@ -8,11 +16,13 @@
     justify-content: flex-start;
     width: 30%;
     align-items: flex-start;
+    color: blue;
 }
 
 .player-two {
       width: 30%;
       align-items: flex-end;
+      color: green;
   }
 
 .token-one, .token-two {

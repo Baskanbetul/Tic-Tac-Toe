@@ -40,7 +40,7 @@ class Game {
           (this.gameContainer[2] === 1 && this.gameContainer[4] === 1 && this.gameContainer[6] === 1) )
         {
           this.winner = this.player1
-          console.log(this.winner)
+          // console.log(this.winner)
           this.player1.increaseWins();
 
     }
