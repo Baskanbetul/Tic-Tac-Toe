@@ -1,4 +1,4 @@
-var Game = require("./game");
+// var Game = require("./game");
 
 
 
@@ -8,7 +8,7 @@ class Player{
     this.token = token
     this.isWinner = true
     this.wins = 0
-
+  }
   increaseWins() {
     this.wins++
   }
