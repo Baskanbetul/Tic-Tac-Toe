@@ -21,16 +21,16 @@ class Game {
    //    this.turn = this.player1.token
    //  }
    // }
-   takeTurn(emoji) {
-      if (emoji === this.player1) {
+   takeTurn() {
+      if (this.turn === this.player1) {
         this.turn = this.player2
-    } else if (emoji === this.player2) {
+    } else if (this.turn === this.player2) {
       this.turn = this.player1
     }
    }
 
     determineFirstPlayer() {
-       if ((this.gameContainer[0] === 1 && this.gameContainer[1] === 1 && this.gameContainer[2] === 1) ||
+       if((this.gameContainer[0] === 1 && this.gameContainer[1] === 1 && this.gameContainer[2] === 1) ||
           (this.gameContainer[3] === 1 && this.gameContainer[4] === 1 && this.gameContainer[5] === 1) ||
           (this.gameContainer[6] === 1 && this.gameContainer[7] === 1 && this.gameContainer[8] === 1) ||
           (this.gameContainer[0] === 1 && this.gameContainer[3] === 1 && this.gameContainer[6] === 1) ||

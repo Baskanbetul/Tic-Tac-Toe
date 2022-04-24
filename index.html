@@ -8,28 +8,32 @@
   </head>
   <body>
     <main>
-      <section class="left-container">
-        <h2 class="player-1" id="player-one">💀 </h2>
-      </section>
+      <section class='player-one'>
+            <h2>Player 1</h2>
+            <p class='emoji'>💀</p>
+            <p class='player-one-wins' id='playerOneWins'>0 wins</p>
+        </section>
       <section class="center-container">
         <h1 class="lets-play-tic-tac-toe">LET'S PLAY TIC TAC TOE</h1>
-        <h3 class="players-1-turn" id="player-turn">IT'S 💀 TURN!</h3>
-        <h4 class="won hidden" id="won">won!</h4>
-        <section class="game-container">
-          <div id="box1" class="click"></div>
-          <div id="box2" class="click"></div>
-          <div id="box3" class="click"></div>
-          <div id="box4" class="click"></div>
-          <div id="box5" class="click"></div>
-          <div id="box6" class="click"></div>
-          <div id="box7" class="click"></div>
-          <div id="box8" class="click"></div>
-          <div id="box9" class="click"></div>
+        <h2 class="turn-message" id="turnMessage">IT'S 💀 's TURN!</h2>
+        <section class="game-container" id='gameContainer'>
+          <div class="click" id="box1"></div>
+          <div class="click" id="box2"></div>
+          <div class="click" id="box3"></div>
+          <div class="click" id="box4"></div>
+          <div class="click" id="box5"></div>
+          <div class="click" id="box6"></div>
+          <div class="click" id="box7"></div>
+          <div class="click" id="box8"></div>
+          <div class="click" id="box9"></div>
         </section>
+        <h3 class="won hidden" id="won">won!</h3>
       </section>
-      <section class="right-container">
-        <h5 class="player-2" id="player-two">👽</h5>
-      </section>
+      <section class='player-two'>
+            <h2>Player 2</h2>
+            <p class='icon-two'>👽</p>
+            <p class='player-two-wins' id='playerTwoWins'>0 wins</p>
+        </section>
     </main>
     <script src="./player.js"></script>
     <script src="./game.js"></script>

@@ -8,4 +8,24 @@
 
 var game = new Game;
 
-//quesrySelectors
+//querySelectors
+
+var gameBoard = document.querySelector("#box1");
+
+
+
+// event eventlistener
+  // for (var i = 0; i < gameBoard.length; i++) {
+  gameBoard.addEventListener('click',addIcon)
+    // return addIcon(i)
+
+  function addIcon() {
+
+  if (game.turn === game.player1 ) {
+        gameBoard.innerText = "💀"
+  }  else if (game.turn === game.player2) {
+          gameBoard.innerText = "👽"
+        }
+        return game.takeTurn();
+   // game.determineFirstPlayer()
+  }
