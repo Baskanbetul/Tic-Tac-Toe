@@ -13,7 +13,7 @@ class Game {
     //                       box7: '', box8: '', box9: '' }
     // this.moveCounter = 0;
     // this.gameBoard = ['a']
-    this.winner = []
+    this.winner = null
   }
    // takeTurn(emoji) {
    //    if (emoji === this.player1.token) {
@@ -22,23 +22,26 @@ class Game {
    //    this.turn = this.player1.token
    //  }
    // }
+
    takeTurn() {
+     // console.log("taketurn")
       if (this.turn === this.player1) {
         this.turn = this.player2
     } else if (this.turn === this.player2) {
+
       this.turn = this.player1
     }
    }
 
     determineFirstPlayer() {
-       if((this.gameContainer[0] === 1 && this.gameContainer[1] === 1 && this.gameContainer[2] === 1) ||
-          (this.gameContainer[3] === 1 && this.gameContainer[4] === 1 && this.gameContainer[5] === 1) ||
-          (this.gameContainer[6] === 1 && this.gameContainer[7] === 1 && this.gameContainer[8] === 1) ||
-          (this.gameContainer[0] === 1 && this.gameContainer[3] === 1 && this.gameContainer[6] === 1) ||
-          (this.gameContainer[1] === 1 && this.gameContainer[4] === 1 && this.gameContainer[7] === 1) ||
-          (this.gameContainer[2] === 1 && this.gameContainer[5] === 1 && this.gameContainer[8] === 1) ||
-          (this.gameContainer[0] === 1 && this.gameContainer[4] === 1 && this.gameContainer[8] === 1) ||
-          (this.gameContainer[2] === 1 && this.gameContainer[4] === 1 && this.gameContainer[6] === 1) )
+       if((this.gameContainer[0] == 1 && this.gameContainer[1] == 1 && this.gameContainer[2] == 1) ||
+          (this.gameContainer[3] == 1 && this.gameContainer[4] == 1 && this.gameContainer[5] == 1) ||
+          (this.gameContainer[6] == 1 && this.gameContainer[7] == 1 && this.gameContainer[8] == 1) ||
+          (this.gameContainer[0] == 1 && this.gameContainer[3] == 1 && this.gameContainer[6] == 1) ||
+          (this.gameContainer[1] == 1 && this.gameContainer[4] == 1 && this.gameContainer[7] == 1) ||
+          (this.gameContainer[2] == 1 && this.gameContainer[5] == 1 && this.gameContainer[8] == 1) ||
+          (this.gameContainer[0] == 1 && this.gameContainer[4] == 1 && this.gameContainer[8] == 1) ||
+          (this.gameContainer[2] == 1 && this.gameContainer[4] == 1 && this.gameContainer[6] == 1) )
         {
           this.winner = this.player1
           // console.log(this.winner)
@@ -58,7 +61,7 @@ class Game {
           (this.gameContainer[2] === 2 && this.gameContainer[4] === 2 && this.gameContainer[6] === 2) )
      {
           this.winner = this.player2
-          console.log(this.winner)
+          // console.log(this.winner)
           this.player2.increaseWins();
     }
     }
@@ -66,7 +69,7 @@ class Game {
 
     checkGameStatus() {
       var drawGame = false;
-      if (this.winner === 9 && this.player1.winner === false && this.player2.winner === false){
+      if (!this.gameContainer.include("") && this.player1.isWinner === false && this.player2.isWinner === false){
           drawGame = true;
       }
         return drawGame;

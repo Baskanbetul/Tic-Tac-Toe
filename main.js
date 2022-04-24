@@ -9,19 +9,50 @@ var playerOneWins = document.querySelector('.player-one-wins');
 var playerTwoWins = document.querySelector('.player-two-wins');
 
 // event eventlistener
-gameBoard.addEventListener('click',addToken)
+// gameBoard.addEventListener('click',addToken)
 
-function addToken() {
+
+function addToken(index) {
     // console.log(event.target.id)
     var showTurn = event.target
   if (game.turn === game.player1 ) {
     showTurn.innerText = "💀"
+    game.gameContainer[index] = "1"
+    game.determineFirstPlayer()
   } else if (game.turn === game.player2) {
+    // console.log("okay")
     showTurn.innerText = "👽"
+    game.gameContainer[index] = "2"
   }
+    game.determineSecondPlayer()
     return game.takeTurn();
   }
 
+// HERE
+
+  function show(element) {
+      element.classList.remove('hidden');
+  }
+
+  function hide(element) {
+      element.classList.add('hidden');
+  }
+
+  // function updateDOM(location) {
+  //     location.innerText = game.playersTurn;
+  // }
+
+
+  // function checkDrawGame () {
+  //     if (game.checkGameStatus() === true) {
+  //         hide(playersTurn);
+  //         // noWinner.innerText = "Upps! No one wins, try AGAIN."
+  //         show(noWinner);
+  //         // triggerResetDataModel();
+  //         // triggerResetDOM();
+  //         // show.playersTurn;
+  //     }
+  // }
 // board fiilout chechk winner
 // game.determineFirstPlayer()
  //    checkWinner() {
