@@ -12,7 +12,8 @@ class Game {
     //                       box4: '', box5: '', box6: '',
     //                       box7: '', box8: '', box9: '' }
     // this.moveCounter = 0;
-    this.winner = ""
+    // this.gameBoard = ['a']
+    this.winner = []
   }
    // takeTurn(emoji) {
    //    if (emoji === this.player1.token) {
@@ -61,6 +62,21 @@ class Game {
           this.player2.increaseWins();
     }
     }
+
+
+    checkGameStatus() {
+      var drawGame = false;
+      if (this.winner === 9 && this.player1.winner === false && this.player2.winner === false){
+          drawGame = true;
+      }
+        return drawGame;
+      }
+
+
+
+
+
+
 
     //how to check win function
    // determineWinner() {

@@ -7,7 +7,8 @@ class Player{
     this.id = id
     this.token = token
     this.isWinner = true
-    this.wins = 0
+    this.wins = []
+    // this.result = "No winner,Try again"
   }
   increaseWins() {
     this.wins++
