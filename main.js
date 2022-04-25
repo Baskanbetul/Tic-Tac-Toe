@@ -9,7 +9,11 @@ var playerOneWins = document.querySelector('.player-one-wins');
 var playerTwoWins = document.querySelector('.player-two-wins');
 
 // event eventlistener
-gameBoard.addEventListener('click',addToken)
+gameBoard.addEventListener('click',function(){
+  addToken()
+  checkWinner()
+
+ })
 
 
 // function addToken(index) {
@@ -40,7 +44,8 @@ function addToken() {
 
   }
     game.takeTurn()
-    // checkDrawGame ()
+    checkDrawGame ()
+    checkWinner()
   }
 // HERE
 
@@ -57,8 +62,28 @@ function addToken() {
   // }
 
   function checkDrawGame () {
-    if (game.checkGameStatus() === true && game.gameContainer ) {
+    if (game.checkGameStatus() === true ) {
       hide(playersTurn);
       show(noWinner);
     }
   }
+
+  function checkWinner() {
+    game.determineFirstPlayer()
+    playerOneWins.innerText = `wins ${game.player1.wins}`
+    game.determineSecondPlayer()
+    playerTwoWins.innerText = `wins ${game.player2.wins}`
+    if (game.winner === game.player1) {
+        // game.player1.isWinner = true   // player1 wins stop the game clear the board
+        game.player1.innerText = `wins ${game.player1.wins}`
+    } else if (game.winner === game.player2) {
+      // game.player2.isWinner = true
+      game.player2.innerText = `wins ${game.player2.wins}`
+      // player2 won stop game clear the board
+    }
+}
+
+
+
+// playerOneWins
+// playertwowins

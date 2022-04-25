@@ -13,7 +13,7 @@ class Game {
     //                       box7: '', box8: '', box9: '' }
     // this.moveCounter = 0;
     // this.gameBoard = ['a']
-    this.winner = 0
+    this.winner = ""
   }
    // takeTurn(emoji) {
    //    if (emoji === this.player1.token) {
@@ -28,17 +28,9 @@ class Game {
       if (this.turn === this.player1) {
         this.turn = this.player2
     } else if (this.turn === this.player2) {
-
       this.turn = this.player1
     }
    }
-
-   // useToken(token) {
-   //    this.gameContainer[0] =  token {
-   //
-   //   }
-   // }
-
 
     determineFirstPlayer() {
        if((this.gameContainer[0] == 1 && this.gameContainer[1] == 1 && this.gameContainer[2] == 1) ||
@@ -51,6 +43,7 @@ class Game {
           (this.gameContainer[2] == 1 && this.gameContainer[4] == 1 && this.gameContainer[6] == 1) )
         {
           this.winner = this.player1
+          this.player1.isWinner = true
           // console.log(this.winner)
           this.player1.increaseWins();
 
@@ -68,6 +61,7 @@ class Game {
           (this.gameContainer[2] == 2 && this.gameContainer[4] == 2 && this.gameContainer[6] == 2) )
      {
           this.winner = this.player2
+          this.player2.isWinner = true
           this.player2.increaseWins();
     }
     }
@@ -81,7 +75,8 @@ class Game {
         return drawGame;
       }
 
-
+      
+// this.winner =
 
 
 
