@@ -7,6 +7,7 @@ var noWinner = document.querySelector('.no-winner')
 var playersTurn = document.querySelector('.turn-message');
 var playerOneWins = document.querySelector('.player-one-wins');
 var playerTwoWins = document.querySelector('.player-two-wins');
+var winnerOne = document.querySelector('.player-one');
 
 // event eventlistener
 gameBoard.addEventListener('click',function() {
@@ -42,15 +43,42 @@ gameBoard.addEventListener('click',function() {
     }
   }
 
-  function checkWinner() {
-    game.determineFirstPlayer()
-    playerOneWins.innerText = `wins ${game.player1.wins}`
-    game.determineSecondPlayer()
-    playerTwoWins.innerText = `wins ${game.player2.wins}`
-    if (game.gameEnd) {
-    var endDelay = setTimeout(function()
-    { for (var i = 0; i < gameContainer.children.length; i++) {
-       gameContainer.children[i].innerHTML = ""
-      } }, 3000) ;
-  }
+//   function checkWinner() {
+//     game.determineFirstPlayer()
+//     playerOneWins.innerText = `Ohh, no score ${game.player1.wins}!`
+//     game.determineSecondPlayer()
+//     playerTwoWins.innerText = `Ohh, no score ${game.player1.wins}!`
+//     if (game.gameEnd) {
+//     var endDelay = setTimeout(function()
+//     { for (var i = 0; i < gameContainer.children.length; i++) {
+//        gameContainer.children[i].innerHTML = ""
+//       } }, 3000) ;
+//   }
+// }
+
+function checkWinner() {
+  if (game.determineFirstPlayer() && game.gameEnd) {
+  playerOneWins.innerText = `Ohh, no score ${game.player1.wins}!`
+  playersTurn.innerText = `${game.player1} It is winner`
+} else if (game.determineSecondPlayer() && game.gameEnd) {
+  playerTwoWins.innerText = `Ohh, no score ${game.player1.wins}!`
+  playersTurn.innerText = `${game.player2} It is winner`
 }
+  var endDelay = setTimeout(function()
+  { for (var i = 0; i < gameContainer.children.length; i++) {
+     gameContainer.children[i].innerHTML = ""
+    } }, 3000) ;
+}
+
+// function checkWinner() {
+//     game.determineFirstPlayer()
+//     playerOneWins.innerText = `${game.player1.wins} won!`
+//     game.determineSecondPlayer()
+//     playerTwoWins.innerText = `${game.player1.wins} won!`
+//     if (game.gameEnd || game.gameWon) {
+//     var endDelay = setTimeout(function()
+//     { for (var i = 0; i < gameContainer.children.length; i++) {
+//        gameContainer.children[i].innerHTML = ""
+//       } }, 3000) ;
+//   }
+// }

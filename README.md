@@ -8,7 +8,7 @@
   - [Illustrations](#illustrations)
   - [Set Up](#set-up)
   - [Sources](#sources)
-  - [Future Additions] (#futue-additions)
+  - [Possible Future Extensions](#possible-future-extensions)
   - [Contributors](#contributors)
   - [Project Specs](#project-specs)
 
@@ -44,16 +44,18 @@ Visit **Tic-Tac-Toe**  for having more fun by encouraging logical thinking, tic-
 ## Sources
   - [MDN](https://developer.mozilla.org/en-US/)
   - [W3Schools](https://www.w3schools.com/)
-  - [TEST CSS FLEXBOX RULES](https://flexbox.help
+  - [TEST CSS FLEXBOX RULES](https://flexbox.help/)
 
-## Future Additions
+## Possible Future Extensions
 
 - Add a landing page where players can select their own tokens before playing and can enter in their names.
 
 
 ## Contributor
+
   - [Betul Baskan](https://github.com/Baskanbetul)
   - [Turing School of Software and Design's GitHub](https://github.com/turingschool-examples)
 
 ## Project Specs
+
   - The project spec & rubric can be found [here](https://github.com/Baskanbetul/Tic-Tac-Toe)

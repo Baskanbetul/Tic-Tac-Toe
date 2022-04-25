@@ -5,7 +5,8 @@ class Game {
     this.gameContainer = ["","","","","","","","",""]
     this.turn = this.player1;
     this.winner = ""
-    this.gameEnd = false
+    this.gameEnd = false;
+    this.gameWon = false;
   }
   takeTurn() {
     if (this.turn === this.player1) {
@@ -56,11 +57,16 @@ class Game {
     }
        return drawGame;
     }
+  // resetGame() {
+  //   if (this.gameEnd) {
+  //     this.player1.isWinner = false
+  //     this.player2.isWinner = false
+  //     this.gameContainer  = ["","","","","","","","",""]
+  //   }
+  // }
   resetGame() {
-    if (this.gameEnd) {
-      this.player1.isWinner = false
-      this.player2.isWinner = false
-      this.gameContainer  = ["","","","","","","","",""]
-    }
+    this.takeTurn();
+    this.gameContainer  = ["","","","","","","","",""]
+
   }
 }
