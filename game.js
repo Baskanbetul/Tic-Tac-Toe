@@ -1,4 +1,3 @@
-
 class Game {
   constructor() {
     this.player1 = new Player(1, "💀" );
@@ -8,79 +7,60 @@ class Game {
     this.winner = ""
     this.gameEnd = false
   }
-   takeTurn() {
-      if (this.turn === this.player1) {
-        this.turn = this.player2
-    } else if (this.turn === this.player2) {
-      this.turn = this.player1
-    }
+  takeTurn() {
+    if (this.turn === this.player1) {
+    this.turn = this.player2
+   } else if (this.turn === this.player2) {
+    this.turn = this.player1
    }
-
-    determineFirstPlayer() {
-       if((this.gameContainer[0] == 1 && this.gameContainer[1] == 1 && this.gameContainer[2] == 1) ||
-          (this.gameContainer[3] == 1 && this.gameContainer[4] == 1 && this.gameContainer[5] == 1) ||
-          (this.gameContainer[6] == 1 && this.gameContainer[7] == 1 && this.gameContainer[8] == 1) ||
-          (this.gameContainer[0] == 1 && this.gameContainer[3] == 1 && this.gameContainer[6] == 1) ||
-          (this.gameContainer[1] == 1 && this.gameContainer[4] == 1 && this.gameContainer[7] == 1) ||
-          (this.gameContainer[2] == 1 && this.gameContainer[5] == 1 && this.gameContainer[8] == 1) ||
-          (this.gameContainer[0] == 1 && this.gameContainer[4] == 1 && this.gameContainer[8] == 1) ||
-          (this.gameContainer[2] == 1 && this.gameContainer[4] == 1 && this.gameContainer[6] == 1) )
-        {
-          this.winner = this.player1
-          this.player1.isWinner = true
-          // console.log(this.winner)
-          this.player1.increaseWins();
-          this.gameEnd = true
-          this.resetGame();
-
-    }
   }
-
-    determineSecondPlayer() {
-       if((this.gameContainer[0] == 2 && this.gameContainer[1] == 2 && this.gameContainer[2] == 2) ||
-          (this.gameContainer[3] == 2 && this.gameContainer[4] == 2 && this.gameContainer[5] == 2) ||
-          (this.gameContainer[6] == 2 && this.gameContainer[7] == 2 && this.gameContainer[8] == 2) ||
-          (this.gameContainer[0] == 2 && this.gameContainer[3] == 2 && this.gameContainer[6] == 2) ||
-          (this.gameContainer[1] == 2 && this.gameContainer[4] == 2 && this.gameContainer[7] == 2) ||
-          (this.gameContainer[2] == 2 && this.gameContainer[5] == 2 && this.gameContainer[8] == 2) ||
-          (this.gameContainer[0] == 2 && this.gameContainer[4] == 2 && this.gameContainer[8] == 2) ||
-          (this.gameContainer[2] == 2 && this.gameContainer[4] == 2 && this.gameContainer[6] == 2) )
-     {
-          this.winner = this.player2
-          this.player2.isWinner = true
-          this.player2.increaseWins();
-          this.gameEnd = true
-          this.resetGame();
+  determineFirstPlayer() {
+    if((this.gameContainer[0] == 1 && this.gameContainer[1] == 1 && this.gameContainer[2] == 1) ||
+       (this.gameContainer[3] == 1 && this.gameContainer[4] == 1 && this.gameContainer[5] == 1) ||
+       (this.gameContainer[6] == 1 && this.gameContainer[7] == 1 && this.gameContainer[8] == 1) ||
+       (this.gameContainer[0] == 1 && this.gameContainer[3] == 1 && this.gameContainer[6] == 1) ||
+       (this.gameContainer[1] == 1 && this.gameContainer[4] == 1 && this.gameContainer[7] == 1) ||
+       (this.gameContainer[2] == 1 && this.gameContainer[5] == 1 && this.gameContainer[8] == 1) ||
+       (this.gameContainer[0] == 1 && this.gameContainer[4] == 1 && this.gameContainer[8] == 1) ||
+       (this.gameContainer[2] == 1 && this.gameContainer[4] == 1 && this.gameContainer[6] == 1) )
+   {
+       this.winner = this.player1
+       this.player1.isWinner = true
+       this.player1.increaseWins();
+       this.gameEnd = true
+       this.resetGame();
+   }
+  }
+  determineSecondPlayer() {
+    if((this.gameContainer[0] == 2 && this.gameContainer[1] == 2 && this.gameContainer[2] == 2) ||
+       (this.gameContainer[3] == 2 && this.gameContainer[4] == 2 && this.gameContainer[5] == 2) ||
+       (this.gameContainer[6] == 2 && this.gameContainer[7] == 2 && this.gameContainer[8] == 2) ||
+       (this.gameContainer[0] == 2 && this.gameContainer[3] == 2 && this.gameContainer[6] == 2) ||
+       (this.gameContainer[1] == 2 && this.gameContainer[4] == 2 && this.gameContainer[7] == 2) ||
+       (this.gameContainer[2] == 2 && this.gameContainer[5] == 2 && this.gameContainer[8] == 2) ||
+       (this.gameContainer[0] == 2 && this.gameContainer[4] == 2 && this.gameContainer[8] == 2) ||
+       (this.gameContainer[2] == 2 && this.gameContainer[4] == 2 && this.gameContainer[6] == 2) )
+   {
+       this.winner = this.player2
+       this.player2.isWinner = true
+       this.player2.increaseWins();
+       this.gameEnd = true
+       this.resetGame();
+   }
+  }
+  checkGameStatus() {
+    var drawGame = false;
+    if (!this.gameContainer.includes("") && this.player1.isWinner === false && this.player2.isWinner === false){
+       drawGame = true;
+       this.resetGame();
     }
+       return drawGame;
     }
-
-
-    checkGameStatus() {
-      var drawGame = false;
-      if (!this.gameContainer.includes("") && this.player1.isWinner === false && this.player2.isWinner === false){
-          drawGame = true;
-          this.resetGame();
-      }
-        return drawGame;
-      }
-
-
-// this.winner =
-
   resetGame() {
     if (this.gameEnd) {
       this.player1.isWinner = false
       this.player2.isWinner = false
       this.gameContainer  = ["","","","","","","","",""]
+    }
   }
 }
-}
-
-
-    //how to check win function
-   // determineWinner() {
-   //   if (this.gameContainer.box1 === this.gameContainer.box2 && this.gameContainer.box2 === this.gameContainer.box3) {
-   //     // return this.turn = or winnwr
-   //     console.log('firstrow');
-   //   }
-     // } else if (this.gameContainer.box4 === this.gameContainer.box5 && this.gameContainer.box5 === this.gameContainer.box6 && this.gameContainer.box4 === this.gameContainer.box5) {
