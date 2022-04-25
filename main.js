@@ -12,7 +12,7 @@ var winnerOne = document.querySelector('.player-one');
 // event eventlistener
 gameBoard.addEventListener('click',function() {
   addToken()
-  checkWinner()
+  // checkWinner()
  })
 
   function addToken() {
@@ -24,8 +24,10 @@ gameBoard.addEventListener('click',function() {
     showTurn.innerText = "👽"
     game.gameContainer[event.target.id] = 2
   }
-    game.takeTurn()
     checkDrawGame ()
+    checkWinner()
+    console.log("addtoken", game.gameEnd)
+    game.takeTurn()
   }
 
   function show(element) {
@@ -57,17 +59,23 @@ gameBoard.addEventListener('click',function() {
 // }
 
 function checkWinner() {
-  if (game.determineFirstPlayer() && game.gameEnd) {
-  playerOneWins.innerText = `Ohh, no score ${game.player1.wins}!`
-  playersTurn.innerText = `${game.player1} It is winner`
-} else if (game.determineSecondPlayer() && game.gameEnd) {
-  playerTwoWins.innerText = `Ohh, no score ${game.player1.wins}!`
-  playersTurn.innerText = `${game.player2} It is winner`
-}
+  game.determineFirstPlayer()
+  game.determineSecondPlayer()
+  if (game.winner === game.player1) {
+  playerOneWins.innerText = game.player1.wins
+  playersTurn.innerText = `${game.player1.token} It is winner`
+  // game.resetGame();
+} else if (game.winner === game.player2) {
+  playerTwoWins.innerText = game.player2.wins
+  playersTurn.innerText = `${game.player2.token} It is winner`
+  // game.resetGame();
+} if (game.gameEnd) {
+  game.resetGame()
   var endDelay = setTimeout(function()
   { for (var i = 0; i < gameContainer.children.length; i++) {
      gameContainer.children[i].innerHTML = ""
     } }, 3000) ;
+}
 }
 
 // function checkWinner() {
@@ -75,10 +83,12 @@ function checkWinner() {
 //     playerOneWins.innerText = `${game.player1.wins} won!`
 //     game.determineSecondPlayer()
 //     playerTwoWins.innerText = `${game.player1.wins} won!`
-//     if (game.gameEnd || game.gameWon) {
-//     var endDelay = setTimeout(function()
-//     { for (var i = 0; i < gameContainer.children.length; i++) {
-//        gameContainer.children[i].innerHTML = ""
-//       } }, 3000) ;
-//   }
+//   //   if (game.gameEnd) {
+//   console.log("checkwinner", game.gameEnd)
+//
+//   //   var endDelay = setTimeout(function()
+//   //   { for (var i = 0; i < gameContainer.children.length; i++) {
+//   //      gameContainer.children[i].innerHTML = ""
+//   //     } }, 3000) ;
+//   // }
 // }

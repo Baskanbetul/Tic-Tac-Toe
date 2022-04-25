@@ -25,11 +25,13 @@ class Game {
        (this.gameContainer[0] == 1 && this.gameContainer[4] == 1 && this.gameContainer[8] == 1) ||
        (this.gameContainer[2] == 1 && this.gameContainer[4] == 1 && this.gameContainer[6] == 1) )
    {
+     // console.log(this.isWinner)
        this.winner = this.player1
        this.player1.isWinner = true
        this.player1.increaseWins();
+       console.log(this.player1.wins)
        this.gameEnd = true
-       this.resetGame();
+       // this.resetGame();
    }
   }
   determineSecondPlayer() {
@@ -42,11 +44,12 @@ class Game {
        (this.gameContainer[0] == 2 && this.gameContainer[4] == 2 && this.gameContainer[8] == 2) ||
        (this.gameContainer[2] == 2 && this.gameContainer[4] == 2 && this.gameContainer[6] == 2) )
    {
+        console.log(this.isWinner)
        this.winner = this.player2
        this.player2.isWinner = true
        this.player2.increaseWins();
        this.gameEnd = true
-       this.resetGame();
+       // this.resetGame();
    }
   }
   checkGameStatus() {
@@ -66,6 +69,8 @@ class Game {
   // }
   resetGame() {
     this.takeTurn();
+    this.gameEnd = false
+    this.winner = ""
     this.gameContainer  = ["","","","","","","","",""]
 
   }
