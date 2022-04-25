@@ -29,19 +29,18 @@ gameBoard.addEventListener('click',addToken)
 //   }
 
 function addToken() {
-    console.log(event.target)
+    // console.log(event.target)
     var showTurn = event.target
   if (game.turn === game.player1 && showTurn.innerText === '') {
     showTurn.innerText = "💀"
     game.gameContainer[event.target.id] = 1
-
   } else if (game.turn === game.player2 && showTurn.innerText === '') {
     showTurn.innerText = "👽"
     game.gameContainer[event.target.id] = 2
 
   }
     game.takeTurn()
-    checkDrawGame ()
+    // checkDrawGame ()
   }
 // HERE
 
@@ -58,7 +57,7 @@ function addToken() {
   // }
 
   function checkDrawGame () {
-    if (game.checkGameStatus() === true) {
+    if (game.checkGameStatus() === true && game.gameContainer ) {
       hide(playersTurn);
       show(noWinner);
     }
