@@ -1,36 +1,66 @@
-// var Player = require("./player");
-
-
-class Game{
+class Game {
   constructor() {
-    this.player1 = new Player("Skull", 💀 );
-    this.player2 = new Player("Alien", 👽);
-    this.turn = this.player1.token;
-    this.gameContainer = {box1: '', box2: '', box3: '',
-                          box4: '', box5: '', box6: '',
-                          box7: '', box8: '', box9: '' }
-    // this.moveCounter = 0;
-    this.winner = ''
+    this.player1 = new Player(1, "💀" );
+    this.player2 = new Player(2, "👽");
+    this.gameContainer = ["","","","","","","","",""]
+    this.turn = this.player1;
+    this.winner = ""
+    this.gameEnd = false
   }
-   takeTurn(emoji) {
-      if (emoji === this.player1.token) {
-        this.turn = this.player2.token
-    } else if (emoji === this.player2.token) {
-      this.turn = this.player1.token
+  takeTurn() {
+    if (this.turn === this.player1) {
+    this.turn = this.player2
+   } else if (this.turn === this.player2) {
+    this.turn = this.player1
+   }
+  }
+  determineFirstPlayer() {
+    if((this.gameContainer[0] == 1 && this.gameContainer[1] == 1 && this.gameContainer[2] == 1) ||
+       (this.gameContainer[3] == 1 && this.gameContainer[4] == 1 && this.gameContainer[5] == 1) ||
+       (this.gameContainer[6] == 1 && this.gameContainer[7] == 1 && this.gameContainer[8] == 1) ||
+       (this.gameContainer[0] == 1 && this.gameContainer[3] == 1 && this.gameContainer[6] == 1) ||
+       (this.gameContainer[1] == 1 && this.gameContainer[4] == 1 && this.gameContainer[7] == 1) ||
+       (this.gameContainer[2] == 1 && this.gameContainer[5] == 1 && this.gameContainer[8] == 1) ||
+       (this.gameContainer[0] == 1 && this.gameContainer[4] == 1 && this.gameContainer[8] == 1) ||
+       (this.gameContainer[2] == 1 && this.gameContainer[4] == 1 && this.gameContainer[6] == 1) )
+   {
+       this.winner = this.player1
+       this.player1.isWinner = true
+       this.player1.increaseWins();
+       this.gameEnd = true
+       this.resetGame();
+   }
+  }
+  determineSecondPlayer() {
+    if((this.gameContainer[0] == 2 && this.gameContainer[1] == 2 && this.gameContainer[2] == 2) ||
+       (this.gameContainer[3] == 2 && this.gameContainer[4] == 2 && this.gameContainer[5] == 2) ||
+       (this.gameContainer[6] == 2 && this.gameContainer[7] == 2 && this.gameContainer[8] == 2) ||
+       (this.gameContainer[0] == 2 && this.gameContainer[3] == 2 && this.gameContainer[6] == 2) ||
+       (this.gameContainer[1] == 2 && this.gameContainer[4] == 2 && this.gameContainer[7] == 2) ||
+       (this.gameContainer[2] == 2 && this.gameContainer[5] == 2 && this.gameContainer[8] == 2) ||
+       (this.gameContainer[0] == 2 && this.gameContainer[4] == 2 && this.gameContainer[8] == 2) ||
+       (this.gameContainer[2] == 2 && this.gameContainer[4] == 2 && this.gameContainer[6] == 2) )
+   {
+       this.winner = this.player2
+       this.player2.isWinner = true
+       this.player2.increaseWins();
+       this.gameEnd = true
+       this.resetGame();
+   }
+  }
+  checkGameStatus() {
+    var drawGame = false;
+    if (!this.gameContainer.includes("") && this.player1.isWinner === false && this.player2.isWinner === false){
+       drawGame = true;
+       this.resetGame();
     }
-   }
-   determineWinner() {
-     if (this.gameContainer.box1 === this.gameContainer.box2 && this.gameContainer.box2 === this.gameContainer.box3 && this.gameContainer.box1 === this.gameContainer.box3) {
-       console.log(this.turn);
-     }
-     // } else if () {}
-     // if (1===2 && 2===3 && 3==)
-     // if click 1 2 3 horizantally you ll // WARNING:
-     // '' 4 5 6
-     // 7 8 9
-     // 1 4 7  vertically
-     //2 5 8
-     // 3 6 9
-     // 1 5 9 and 3 5 7 diagnal
-   }
+       return drawGame;
+    }
+  resetGame() {
+    if (this.gameEnd) {
+      this.player1.isWinner = false
+      this.player2.isWinner = false
+      this.gameContainer  = ["","","","","","","","",""]
+    }
   }
+}

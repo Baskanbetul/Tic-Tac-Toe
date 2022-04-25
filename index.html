@@ -2,37 +2,44 @@
 <html lang="en">
   <head>
     <meta charset= "UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Diplomata+SC&family=Eater&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>Tic Tac Toe</title>
   </head>
   <body>
     <main>
-      <section class="left-container">
-        <h2 class="player-1" id="player-one">💀 </h2>
-      </section>
+      <section class='player-one'>
+            <h2>Player 1</h2>
+            <p class='token-one'>💀</p>
+            <p class='player-one-wins' id='playerOneWins'>0 wins</p>
+        </section>
       <section class="center-container">
         <h1 class="lets-play-tic-tac-toe">LET'S PLAY TIC TAC TOE</h1>
-        <h3 class="players-1-turn" id="player-turn">IT'S 💀 TURN!</h3>
-        <h4 class="won hidden" id="won">won!</h4>
-        <section class="game-container">
-          <button id="box1" class="click"></button>
-          <button id="box2" class="click"></button>
-          <button id="box3" class="click"></button>
-          <button id="box4" class="click"></button>
-          <button id="box5" class="click"></button>
-          <button id="box6" class="click"></button>
-          <button id="box7" class="click"></button>
-          <button id="box8" class="click"></button>
-          <button id="box9" class="click"></button>
+        <h2 class="turn-message" id="turnMessage">IT'S 💀 's TURN!</h2>
+        <section class="game-container" id="gameContainer">
+          <div class="boxes a1"  id='0'></div>
+          <div class="boxes a2"  id='1'></div>
+          <div class="boxes a3"  id='2'></div>
+          <div class="boxes b1"  id='3'></div>
+          <div class="boxes b2"  id='4'></div>
+          <div class="boxes b3"  id='5'></div>
+          <div class="boxes c1"  id='6'></div>
+          <div class="boxes c2"  id='7'></div>
+          <div class="boxes c3"  id='8'></div>
         </section>
-      </section
-      <section class="right-container">
-        <h5 class="player-2" id="player-two">👽</h5>
+        <h3 class="no-winner hidden" id="no-winner">Upps!Let's try AGAIN.</h3>
       </section>
+      <section class='player-two'>
+            <h2>Player 2</h2>
+            <p class='token-two'>👽</p>
+            <p class='player-two-wins' id='playerTwoWins'>0 wins</p>
+        </section>
     </main>
-    <script src="./src/player.js"></script>
-    <script src="./src/game.js"></script>
-    <script src="./src/main.js"></script>
+    <script src="./player.js"></script>
+    <script src="./game.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
