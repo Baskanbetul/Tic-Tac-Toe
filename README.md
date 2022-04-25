@@ -8,7 +8,7 @@
   - [Illustrations](#illustrations)
   - [Set Up](#set-up)
   - [Sources](#sources)
-  - [Future Additions]
+  - [Future Additions] (#futue-additions)
   - [Contributors](#contributors)
   - [Project Specs](#project-specs)
 
