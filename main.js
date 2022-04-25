@@ -41,11 +41,10 @@ function addToken() {
   } else if (game.turn === game.player2 && showTurn.innerText === '') {
     showTurn.innerText = "👽"
     game.gameContainer[event.target.id] = 2
-
   }
     game.takeTurn()
     checkDrawGame ()
-    checkWinner()
+
   }
 // HERE
 
@@ -68,20 +67,39 @@ function addToken() {
     }
   }
 
+  // function checkWinner() {
+  //   if (game.determineFirstPlayer()) {
+  //   playerOneWins.innerText = `wins ${game.player1.wins}`
+  // } else if (game.determineSecondPlayer()) {
+  //   playerTwoWins.innerText = `wins ${game.player2.wins}`
+  // }  for (var i = 0; i < gameContainer.children.length; i++) {
+  //     gameContainer.children[i].innerHTML = ""
+  // }
+
   function checkWinner() {
     game.determineFirstPlayer()
     playerOneWins.innerText = `wins ${game.player1.wins}`
     game.determineSecondPlayer()
     playerTwoWins.innerText = `wins ${game.player2.wins}`
-    if (game.winner === game.player1) {
-        // game.player1.isWinner = true   // player1 wins stop the game clear the board
-        game.player1.innerText = `wins ${game.player1.wins}`
-    } else if (game.winner === game.player2) {
-      // game.player2.isWinner = true
-      game.player2.innerText = `wins ${game.player2.wins}`
-      // player2 won stop game clear the board
-    }
+    if (game.gameEnd) {
+    var endDelay = setTimeout(function()
+    { for (var i = 0; i < gameContainer.children.length; i++) {
+       gameContainer.children[i].innerHTML = ""
+      } }, 3000) ;
+  }
 }
+// Var endDelay = setTimeout(function() { for (var i = 0; i < gameContainer.children.length; i++) {
+//  gameContainer.children[i].innerHTML = ""
+// } }, 3000) ;
+    // if (game.winner === game.player1) {
+        // game.player1.isWinner = true   // player1 wins stop the game clear the board
+        // game.player1.innerText = `wins ${game.player1.wins}`
+    // } else if (game.winner === game.player2) {
+      // game.player2.isWinner = true
+      // game.player2.innerText = `wins ${game.player2.wins}`
+      // player2 won stop game clear the board
+    // }
+
 
 
 
