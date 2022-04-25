@@ -5,10 +5,12 @@
 
 h1{
   font-family: 'Creepster', cursive;
+  color: darkgoldenrod;
 }
 
 h2{
   font-family: 'Eater', cursive;
+  color: chartreuse;
 }
 
 .player-one {
@@ -16,7 +18,7 @@ h2{
     justify-content: flex-start;
     width: 30%;
     align-items: flex-start;
-    color: blue;
+    color: chartreuse;
 }
 
 .player-two {
@@ -115,9 +117,6 @@ main{
     align-items: center;
 }
 
-
-
-
 /*
 .h3 {
   font-size: 2em;
@@ -129,5 +128,5 @@ main{
 } */
 
 .hidden {
-  display: none!important;
+  display: none;
 }

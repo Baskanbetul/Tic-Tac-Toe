@@ -3,31 +3,46 @@ var game = new Game;
 
 //querySelectors
 var gameBoard = document.querySelector("#gameContainer");
-var noWinner = document.querySelector('#no-winner')
+var noWinner = document.querySelector('.no-winner')
 var playersTurn = document.querySelector('.turn-message');
 var playerOneWins = document.querySelector('.player-one-wins');
 var playerTwoWins = document.querySelector('.player-two-wins');
 
 // event eventlistener
-// gameBoard.addEventListener('click',addToken)
+gameBoard.addEventListener('click',addToken)
 
 
-function addToken(index) {
-    // console.log(event.target.id)
+// function addToken(index) {
+//     // console.log(event.target.id)
+//     var showTurn = event.target
+//   if (game.turn === game.player1 ) {
+//     showTurn.innerText = "💀"
+//     game.gameContainer[index] = "1"
+//     game.determineFirstPlayer()
+//   } else if (game.turn === game.player2) {
+//     // console.log("okay")
+//     showTurn.innerText = "👽"
+//     game.gameContainer[index] = "2"
+//   }
+//     game.determineSecondPlayer()
+//     return game.takeTurn();
+//   }
+
+function addToken() {
+    console.log(event.target)
     var showTurn = event.target
-  if (game.turn === game.player1 ) {
+  if (game.turn === game.player1 && showTurn.innerText === '') {
     showTurn.innerText = "💀"
-    game.gameContainer[index] = "1"
-    game.determineFirstPlayer()
-  } else if (game.turn === game.player2) {
-    // console.log("okay")
-    showTurn.innerText = "👽"
-    game.gameContainer[index] = "2"
-  }
-    game.determineSecondPlayer()
-    return game.takeTurn();
-  }
+    game.gameContainer[event.target.id] = 1
 
+  } else if (game.turn === game.player2 && showTurn.innerText === '') {
+    showTurn.innerText = "👽"
+    game.gameContainer[event.target.id] = 2
+
+  }
+    game.takeTurn()
+    checkDrawGame ()
+  }
 // HERE
 
   function show(element) {
@@ -42,34 +57,9 @@ function addToken(index) {
   //     location.innerText = game.playersTurn;
   // }
 
-
-  // function checkDrawGame () {
-  //     if (game.checkGameStatus() === true) {
-  //         hide(playersTurn);
-  //         // noWinner.innerText = "Upps! No one wins, try AGAIN."
-  //         show(noWinner);
-  //         // triggerResetDataModel();
-  //         // triggerResetDOM();
-  //         // show.playersTurn;
-  //     }
-  // }
-// board fiilout chechk winner
-// game.determineFirstPlayer()
- //    checkWinner() {
- //    // if (!this.gameContainer.include(game.player1) ||
- //    // !this.gameContainer.include(game.player2)
- // if ( game.winner != game.player1 &&  game.winner != game.player2 &&
- //  gameContainer[0] = 1
- // assign index to any number
-
- // ) {
- //   return  noWinner
- // }
- //
- //  ) {
-
-    // if it snot include same id in first raow other conditions
-    // show me no winner
-
-//   }
-// }
+  function checkDrawGame () {
+    if (game.checkGameStatus() === true) {
+      hide(playersTurn);
+      show(noWinner);
+    }
+  }
