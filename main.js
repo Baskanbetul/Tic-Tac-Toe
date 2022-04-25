@@ -10,85 +10,80 @@ var playerTwoWins = document.querySelector('.player-two-wins');
 var winnerOne = document.querySelector('.player-one');
 
 // event eventlistener
-gameBoard.addEventListener('click',function() {
-  addToken()
-  // checkWinner()
- })
+gameBoard.addEventListener('click',addToken)
 
-  function addToken() {
-    var showTurn = event.target
-    if (game.turn === game.player1 && showTurn.innerText === '') {
+//Functions
+
+function addToken() {
+  var showTurn = event.target
+  if (game.turn === game.player1 && showTurn.innerText === '') {
     showTurn.innerText = "💀"
     game.gameContainer[event.target.id] = 1
+    game.takeTurn();
   } else if (game.turn === game.player2 && showTurn.innerText === '') {
     showTurn.innerText = "👽"
     game.gameContainer[event.target.id] = 2
+    game.takeTurn();
   }
-    checkDrawGame ()
-    checkWinner()
-    console.log("addtoken", game.gameEnd)
-    game.takeTurn()
-  }
+  backToTurn()
+  checkWinner();
+  showWinnerText()
+}
 
-  function show(element) {
-    element.classList.remove('hidden');
+function showWinnerText() {
+  if (game.winner === game.player1) {
+    playerOneWins.innerText = game.player1.wins
+    playersTurn.innerText = `${game.player1.token} is WINNER`
+  } else if (game.winner === game.player2) {
+    playerTwoWins.innerText = game.player2.wins
+    playersTurn.innerText = `${game.player2.token} is WINNER`
   }
-
-  function hide(element) {
-    element.classList.add('hidden');
-  }
-
-  function checkDrawGame () {
-    if (game.checkGameStatus() === true) {
-      hide(playersTurn);
-      show(noWinner);
-    }
-  }
-
-//   function checkWinner() {
-//     game.determineFirstPlayer()
-//     playerOneWins.innerText = `Ohh, no score ${game.player1.wins}!`
-//     game.determineSecondPlayer()
-//     playerTwoWins.innerText = `Ohh, no score ${game.player1.wins}!`
-//     if (game.gameEnd) {
-//     var endDelay = setTimeout(function()
-//     { for (var i = 0; i < gameContainer.children.length; i++) {
-//        gameContainer.children[i].innerHTML = ""
-//       } }, 3000) ;
-//   }
-// }
+}
 
 function checkWinner() {
-  game.determineFirstPlayer()
-  game.determineSecondPlayer()
-  if (game.winner === game.player1) {
-  playerOneWins.innerText = game.player1.wins
-  playersTurn.innerText = `${game.player1.token} It is winner`
-  // game.resetGame();
-} else if (game.winner === game.player2) {
-  playerTwoWins.innerText = game.player2.wins
-  playersTurn.innerText = `${game.player2.token} It is winner`
-  // game.resetGame();
-} if (game.gameEnd) {
-  game.resetGame()
-  var endDelay = setTimeout(function()
-  { for (var i = 0; i < gameContainer.children.length; i++) {
-     gameContainer.children[i].innerHTML = ""
-    } }, 3000) ;
-}
+  game.determineFirstPlayer();
+  game.determineSecondPlayer();
+  checkDrawGame();
+  timesUp();
 }
 
-// function checkWinner() {
-//     game.determineFirstPlayer()
-//     playerOneWins.innerText = `${game.player1.wins} won!`
-//     game.determineSecondPlayer()
-//     playerTwoWins.innerText = `${game.player1.wins} won!`
-//   //   if (game.gameEnd) {
-//   console.log("checkwinner", game.gameEnd)
-//
-//   //   var endDelay = setTimeout(function()
-//   //   { for (var i = 0; i < gameContainer.children.length; i++) {
-//   //      gameContainer.children[i].innerHTML = ""
-//   //     } }, 3000) ;
-//   // }
-// }
+function checkDrawGame() {
+  if (game.checkDrawStatus() === true) {
+    hide(playersTurn);
+    show(noWinner);
+    game.gameEnd = true
+  }
+}
+
+function timesUp() {
+  if (game.gameEnd) {
+    setTimeout(function() {
+      game.resetGame()
+      hide(noWinner);
+      emptyGame();
+  }, 1000) ;
+ }
+  show(playersTurn);
+}
+
+function emptyGame() {
+  for (var i = 0; i < gameContainer.children.length; i++) {
+    gameContainer.children[i].innerHTML = ""
+  }
+}
+
+function backToTurn() {
+  if (game.turn === game.player1) {
+    playersTurn.innerText = `it is ${game.player1.token} 's turn`
+  } else if (game.turn === game.player2) {
+    playersTurn.innerText = `it is ${game.player2.token} 's turn`
+  }
+}
+
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
