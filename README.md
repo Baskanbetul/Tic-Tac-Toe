@@ -3,6 +3,7 @@
 ## Table of Contents
 
   - [Introduction](#introduction)
+  - [Deployment Link](#deployment-link)
   - [Technologies](#technologies)
   - [Features](#features)
   - [Illustrations](#illustrations)
@@ -16,6 +17,11 @@
 
 Visit **Tic-Tac-Toe**  for having more fun by encouraging logical thinking, tic-tac-toe helps us develop our spatial skills. Tic Tac Toe is well known game that is simple to grasp, easy to adapt and excellent for building beginner planning, problem solving and perspective taking skills.The game is played on a grid that's 3 squares by 3 squares. Players take turns putting their marks in empty squares.
 
+###### Example of game
+![Tic-tac-toe game](https://media.giphy.com/media/3lYqt0BzTmFoAEbKrn/giphy.gif)
+
+## Deployment Link
+- Play game 👉🏻 [here!]
 
 ## Technologies
   - Javascript
@@ -24,22 +30,22 @@ Visit **Tic-Tac-Toe**  for having more fun by encouraging logical thinking, tic-
 
 ## Features
 
-  - You can choose your player,you are 💀 , and your friend is 👽 .
+  - You can choose your player, you are 💀, and your friend is 👽 .
   - Players take turns putting their marks in empty squares.
-  - The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner. When all 9 squares are full, the game is over.
+  - The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner. When all 9 squares are full, the game is over.
 
 ## Illustrations
-
-<img width="1060" height="1000" src="https://c.tenor.com/tgOpFtPm0ZIAAAAC/scooby-skull.gif" />
+###### Example of having a winner!
+![Tic-tac-toe winner](https://media.giphy.com/media/JsnQEB7OcezqgemBkF/giphy-downsized-large.gif)
+###### Example of draw!
+![Tic-tac-toe winner](https://media.giphy.com/media/dXlOMAnaeiXU19sLlS/giphy.gif)
 
 ## Set Up
 
-###### To begin, choose one partner to do the following:
-
-1. Fork the repository found here: https://github.com/Baskanbetul/Tic-Tac-Toe .
-2. Clone down your new, forked repo. While cloning, name it what you want your project to be named. git clone **url** **newNameYouWantItToHave**
-3. cd into the project. Read this README thoroughly, then begin working!
-3. View the project in the browser by running open index.html in your terminal.
+1. Fork the repository found here: https://github.com/Baskanbetul/Tic-Tac-Toe.
+2. Clone down your new, forked repo. While cloning, name it what you want your project to be named. `git clone` < url >  < newNameYouWantItToHave >.
+3. `cd` into the project. Read this README thoroughly, then begin working!
+4. View the project in the browser by running `open index.html` in your terminal.
 
 ## Sources
   - [MDN](https://developer.mozilla.org/en-US/)
@@ -58,4 +64,4 @@ Visit **Tic-Tac-Toe**  for having more fun by encouraging logical thinking, tic-
 
 ## Project Specs
 
-  - The project spec & rubric can be found [here](https://github.com/Baskanbetul/Tic-Tac-Toe)
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo-v2.html)
