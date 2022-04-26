@@ -1,11 +1,11 @@
 body{
+  display: flex;
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  display: flex;
   background: url('https://thumbs.gfycat.com/AccurateCoordinatedFowl-size_restricted.gif') no-repeat center center fixed;
   background-size: cover;
-  margin:0;
+  /* margin:0; */
 }
 
 h1, h2, h3 {
@@ -23,6 +23,7 @@ h1{
 h2{
   font-family: 'Eater', cursive;
   color: chartreuse;
+  transition: .4s ease;
 }
 
 h3 {
@@ -50,9 +51,9 @@ main{
 }
 
 .player-two {
-      width: 30%;
+    width: 30%;
       align-items: flex-end;
-      color: green;
+      color: chartreuse;
   }
 
 .token-one, .token-two {
@@ -83,29 +84,24 @@ main{
     font-size: 4em;
 }
 
-.a2 {
-    border-left: 1px solid #000000;
-    border-right: 1px solid #000000;
+.a2, .c2 {
+    border-left: 1.5px solid purple;
+    border-right: 1.5px solid purple;
 }
 
-.b1 {
-    border-bottom: 1px solid #000000;
-    border-top: 1px solid #000000;;
+.b1, .b3 {
+    border-bottom: 1.5px solid purple;
+    border-top: 1.5px solid purple;
 }
 
 .b2 {
-    border: 1px solid #000000;
+  border: 1.5px solid purple;
 }
-
-.b3 {
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-}
-
+/* 
 .c2 {
-    border-right: 1px solid #000000;
-    border-left: 1px solid #000000;
-}
+    border-right: 1.5px solid purple;
+    border-left: 1.5px solid purple;
+} */
 
 .player-one-wins, .player-two-wins {
   font-size: 1.5em;

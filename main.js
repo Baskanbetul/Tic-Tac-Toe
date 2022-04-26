@@ -3,14 +3,18 @@ var game = new Game;
 
 //querySelectors
 var gameBoard = document.querySelector("#gameContainer");
-var noWinner = document.querySelector('.no-winner')
+var itIsDraw = document.querySelector('.itIsDraw')
 var playersTurn = document.querySelector('.turn-message');
 var playerOneWins = document.querySelector('.player-one-wins');
 var playerTwoWins = document.querySelector('.player-two-wins');
 var winnerOne = document.querySelector('.player-one');
 
 // event eventlistener
-gameBoard.addEventListener('click',addToken)
+gameBoard.addEventListener('click', function() {
+  if(playersTurn.innerText !== (`${game.player1.token} is WINNER` || `${game.player2.token} is WINNER`)) {
+    addToken()
+  }
+})
 
 //Functions
 
@@ -26,6 +30,7 @@ function addToken() {
     game.takeTurn();
   }
   backToTurn()
+  checkDrawGame()
   checkWinner();
   showWinnerText()
 }
@@ -43,15 +48,15 @@ function showWinnerText() {
 function checkWinner() {
   game.determineFirstPlayer();
   game.determineSecondPlayer();
-  checkDrawGame();
+  // checkDrawGame();
   timesUp();
 }
 
 function checkDrawGame() {
   if (game.checkDrawStatus() === true) {
-    hide(playersTurn);
-    show(noWinner);
     game.gameEnd = true
+    hide(playersTurn);
+    show(itIsDraw);
   }
 }
 
@@ -59,11 +64,13 @@ function timesUp() {
   if (game.gameEnd) {
     setTimeout(function() {
       game.resetGame()
-      hide(noWinner);
+      hide(itIsDraw);
+      backToTurn()
+      show(playersTurn);
       emptyGame();
   }, 1000) ;
  }
-  show(playersTurn);
+  // show(playersTurn);
 }
 
 function emptyGame() {

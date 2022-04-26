@@ -25,7 +25,7 @@ class Game {
        (this.gameContainer[2] == 1 && this.gameContainer[4] == 1 && this.gameContainer[6] == 1) )
     {
        this.winner = this.player1
-       this.player1.isWinner = true;
+       // this.player1.isWinner = true;
        this.player1.increaseWins();
        this.gameEnd = true;
     }
@@ -41,14 +41,14 @@ class Game {
        (this.gameContainer[2] == 2 && this.gameContainer[4] == 2 && this.gameContainer[6] == 2) )
     {
        this.winner = this.player2
-       this.player2.isWinner = true;
+       // this.player2.isWinner = true;
        this.player2.increaseWins();
        this.gameEnd = true;
     }
   }
   checkDrawStatus() {
     var drawGame = false;
-    if (!this.gameContainer.includes("") && this.player1.isWinner === false && this.player2.isWinner === false){
+    if (!this.gameContainer.includes("") && this.winner != this.player1 && this.winner != this.player2){
        drawGame = true;
        this.resetGame();
     }
@@ -56,6 +56,8 @@ class Game {
     }
   resetGame() {
     this.gameEnd = false
+    // this.player1.isWinner = false
+    // this.player2.isWinner = false
     this.winner = ""
     this.gameContainer  = ["","","","","","","","",""]
   }
