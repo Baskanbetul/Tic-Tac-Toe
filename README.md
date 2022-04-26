@@ -10,6 +10,7 @@
   - [Set Up](#set-up)
   - [Sources](#sources)
   - [Possible Future Extensions](#possible-future-extensions)
+  - [Planning Document](#planning-document)
   - [Contributors](#contributors)
   - [Project Specs](#project-specs)
 
@@ -56,8 +57,10 @@ Visit **Tic-Tac-Toe**  for having more fun by encouraging logical thinking, tic-
 
 - Add a landing page where players can select their own tokens before playing and can enter in their names.
 
+## Planning Document
+- [Here](https://docs.google.com/spreadsheets/d/1xlqeS08vUL0c4sTuNoA2aHa3f1VKqpZrza4W9X5bG2U/edit#gid=0)
 
-## Contributor
+## Contributors
 
   - [Betul Baskan](https://github.com/Baskanbetul)
   - [Turing School of Software and Design's GitHub](https://github.com/turingschool-examples)
