@@ -29,7 +29,6 @@ function addToken() {
     game.takeTurn();
   }
   backToTurn();
-  checkDrawGame();
   checkWinner();
   showWinnerText();
 }
@@ -47,6 +46,7 @@ function showWinnerText() {
 function checkWinner() {
   game.determineFirstPlayer();
   game.determineSecondPlayer();
+  checkDrawGame();
   timesUp();
 }
 
