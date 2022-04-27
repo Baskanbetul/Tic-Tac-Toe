@@ -22,7 +22,7 @@ Visit **Tic-Tac-Toe**  for having more fun by encouraging logical thinking, tic-
 ![Tic-tac-toe game](https://media.giphy.com/media/3lYqt0BzTmFoAEbKrn/giphy.gif)
 
 ## Deployment Link
-- Play game 👉🏻 [here!]
+- Play game 👉🏻 [here!](https://baskanbetul.github.io/Tic-Tac-Toe/)
 
 ## Technologies
   - Javascript
