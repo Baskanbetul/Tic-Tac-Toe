@@ -1,29 +1,32 @@
-body{
+body {
   display: flex;
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: url('https://thumbs.gfycat.com/AccurateCoordinatedFowl-size_restricted.gif') no-repeat center center fixed;
+  background: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTAxdjg5dHJzaXhscnd4enZpd3h6MHlrY3RsZHNobmdmMmd0aGNqNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xThtav6J5dTdhU45AQ/giphy.gif")
+    no-repeat center center fixed;
   background-size: cover;
   margin: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   display: flex;
   justify-content: center;
 }
 
-h1{
-  font-family: 'Creepster', cursive;
+h1 {
+  font-family: "Creepster", cursive;
   color: darkgoldenrod;
   font-size: 2.4rem;
   margin-bottom: -10px;
 }
 
-h2{
-  font-family: 'Eater', cursive;
+h2 {
+  font-family: "Eater", cursive;
   color: chartreuse;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
 h3 {
@@ -36,7 +39,7 @@ p {
   justify-content: center;
 }
 
-main{
+main {
   display: flex;
   align-content: space-around;
   justify-content: space-evenly;
@@ -56,7 +59,8 @@ main{
   color: chartreuse;
 }
 
-.token-one, .token-two {
+.token-one,
+.token-two {
   margin-bottom: 10px;
   font-size: 6em;
 }
@@ -69,14 +73,14 @@ main{
   flex-wrap: wrap;
 }
 
-.game-container{
+.game-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 90%;
 }
 
-.boxes{
+.boxes {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,12 +89,14 @@ main{
   font-size: 4em;
 }
 
-.a2, .c2 {
+.a2,
+.c2 {
   border-left: 1.5px solid purple;
   border-right: 1.5px solid purple;
 }
 
-.b1, .b3 {
+.b1,
+.b3 {
   border-bottom: 1.5px solid purple;
   border-top: 1.5px solid purple;
 }
@@ -99,7 +105,8 @@ main{
   border: 1.5px solid purple;
 }
 
-.player-one-wins, .player-two-wins {
+.player-one-wins,
+.player-two-wins {
   font-size: 2em;
 }
 
